@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Index</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <img src="{% static 'imgs/intro_bg.jpg' %}" ></img>
+    <p>MY INDEX</p>
+    {% if user%}
+    <p>Bienvenido {{user.username}}</p>
+    {%endif%}
+  </body>
+</html>
