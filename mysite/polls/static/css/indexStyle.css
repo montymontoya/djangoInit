@@ -1,0 +1,11 @@
+body{
+    padding-left: 0em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: blue;
+    background-color: dimgrey;
+}
+
+.a{
+    border: 10px solid #1C6EA4;
+    border-radius: 40px 40px 40px 40px;
+}
