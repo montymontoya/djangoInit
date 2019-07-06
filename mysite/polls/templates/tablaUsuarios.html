@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Index</title>
+    
+    <link rel="stylesheet" href="{% static 'css/indexStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    
+  </head>
+  <body>
+
+      <table style="width:100%">
+          <tr>
+            <th>Nombre</th>
+            <th>Usuario</th> 
+            <th>Correo</th>
+          </tr>
+          {%for usuario in datosUser%}
+          <tr>
+            <td><a href="usuario/{{usuario.id}}">{{usuario.first_name}}</a></td>
+            <td>{{usuario.username}}</td> 
+            <td>{{usuario.email}}</td>
+          </tr>
+          {%endfor%}
+        </table>
+  </body>
+  
+</html>

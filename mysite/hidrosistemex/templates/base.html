@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hidrosistemex</title>
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom_Style.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}">
+
+    <!-- c3 Charts -->
+    <link rel="stylesheet" href="{% static 'css/plugins/c3/c3.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Hstyle.css' %}">
+
+</head>
+
+<body>
+
+<div id="wrapper" style="background: #F5F6FA ">
+
+    <nav class="navbar-default navbar-static-side" style="background:  #263238" >
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header" style="background:  #263238" >
+                    <div class="dropdown profile-element" >
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <img alt="image" class="border navbar-minimalize" src="{% static 'img/logo_full.png' %}" width="100%">
+                            <!--<span class="block m-t-xs font-bold" style="color: black">Hidrosistemex</span>-->
+                        </a>
+                    </div>
+                    <div class="logo-element navbar-minimalize">
+                            <img alt="image" class="border" src="{% static 'img/logo.png' %}" width="100%">
+                    </div>
+                </li>
+                <li style="background: transparent">
+                    <button class="btn"  style="background: transparent">
+                        <a href="{%url 'temperatura_'%}"><img src="{%block temperatura%} {% static 'img/ic_Normal/Group 68@2x.png' %} {%endblock%} " width="100"/></a>
+                    </button>
+
+                    <button class="btn btn-change"  style="background: transparent">
+                        <a href="{%url 'particulas_'%}"><img src="{%block particulas%} {% static 'img/ic_Normal/Group 69@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+                </li>
+                <li style="background: transparent">
+                    <button class="btn btn-change" style="background: transparent">
+                        <a href="{%url 'azufre_'%}"><img src="{%block azufre%} {% static 'img/ic_Normal/Group 70@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+                    
+                    <button class="btn btn-change" style="background: transparent">
+                        <a href="{%url 'isobutileno_'%}"><img src="{%block isobutileno%} {% static 'img/ic_Normal/Group 71@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+                </li>
+                <li style="background: transparent">
+                    <button class="btn btn-change" style="background: transparent">
+                        <a href="{%url 'diocarbono_'%}"><img src="{%block diocarbono%} {% static 'img/ic_Normal/Group 72@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+    
+                    <button class="btn btn-change" style="background: transparent">
+                        <a href="{%url 'monocarbono_'%}"><img src="{%block monocarbono%} {% static 'img/ic_Normal/Group 73@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+                </li>
+                <li style="background: transparent">        
+                    <button class="btn btn-change" style="background: transparent">
+                        <a href="{%url 'ozono_'%}"><img src="{%block ozono%} {% static 'img/ic_Normal/Group 74@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+
+                    <button class="btn btn-change" style="background: transparent">
+                        <a href="{%url 'dionitro_'%}"><img src="{%block dionitro%} {% static 'img/ic_Normal/Group 75@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+                </li>
+                <li style="background: transparent">
+                    <button class="btn btn-change" style="background: transparent">
+                        <a href="{%url 'nitrico_'%}"><img src="{%block nitrico%} {% static 'img/ic_Normal/Group 76@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+                        
+                    <button class="btn btn-change" style="background: transparent">
+                        <a href="{%url 'humedad_'%}"><img src="{%block humedad%} {% static 'img/ic_Normal/Group 77@2x.png' %}{%endblock%}" width="100"/></a>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="page-wrapper"  >
+        <div class="lerow ">
+            <nav class="lenavbar " role="navigation" >
+                <div class="navbar-header" >
+                    <a class="navbar-minimalize btn" href="#" ><i class="fa fa-bars" style="color: #5f5f5f"></i>   </a>
+                </div>
+            </nav>
+        </div>
+        <!---->
+        <div class="wrapper animated fadeInRight">
+            <div >
+                <h3 class="titulin" style="font-stretch: ultra-expanded">{%block titulin%} Temperatura {%endblock%} </h3>
+                <div class="row">
+
+<!--GRAFICA SUPERIOR PRINCIPAL-->
+                    <div class="col-12">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5>Fecha de Hoy</h5>
+                            
+                                <div>
+                                    <div id="Superior"  ></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+<!--FIN GRAFICA SUPERIOR PRINCIPAL-->
+                    <div class="col-sm-4">   
+                        <div class="ibox">
+                            <div class="ibox-title" style="padding: 3%">
+                                <div class="form-group">       
+                                    <input class="form-control"  type="date" value="2011-08-19" id="example-date-input" style="width: 100%">
+                                </div>
+                                <table class="table ">
+                                    <thead>
+                                        <tr style="background: #E3EDF2">
+                                            <th>Fecha</th>
+                                            <th style="text-align: center">Temperatura</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody style="background: white">
+                                        <tr>
+                                            <td>dd/mm/aa</td>
+                                                        <td style="text-align: center">C°</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>dd/mm/aa</td>
+                                                        <td style="text-align: center">C°</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>dd/mm/aa</td>
+                                                        <td style="text-align: center">C°</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>dd/mm/aa</td>
+                                                        <td style="text-align: center">C°</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>dd/mm/aa</td>
+                                                        <td style="text-align: center">C°</td>
+                                                    </tr>          
+                                                </tbody>
+                                              </table>
+                                    </div>
+                                </div>
+                         </div>
+<!--GRAFICA INFERIOR DERECHA-->
+                        <div class="col-8">
+                            <div class="ibox ">
+                                <div class="ibox-title">
+                                    <h5>Día | Mes</h5>
+                                
+                                    <div>
+                                        <div id="InferiorDerecha"  ></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<!--FIN GRAFICA INFERIOR DERECHA-->
+                </div>
+            </div>
+        </div>
+    <!---->
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+
+<script src="{% static 'js/jquery-3.1.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/plugins/metisMenu/jquery.metisMenu.js' %}"></script>
+<script src="{% static 'js/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="{% static 'js/inspinia.js'%}"></script>
+<script src="{% static 'js/plugins/pace/pace.min.js' %}"></script>
+
+<!-- d3 and c3 charts -->
+<script src="{% static 'js/plugins/d3/d3.min.js' %}"></script>
+<script src="{% static 'js/plugins/c3/c3.min.js' %}"></script>
+
+
+<script>
+        $(document).ready(function () {
+            c3.generate({
+                bindto: '#Superior',
+                legend:{
+                        hide: true
+                    },
+                data:{
+                    x: 'x',
+                    xFormat: '%H:%M:%S',
+                    columns: [
+                    ['x', '10:00:00', '10:30:00', '11:00:00', '11:30:00', '12:00:00', '12:30:00'],
+                        ['Hora', 15, 10, 15, 18, 15, 23]
+                    ],
+                    colors:{
+                        Hora: '#FF6502'
+                    },
+                    
+                    type: 'spline'
+                },
+                grid: {
+                    x:{
+                        show: true
+                    },
+                    y:{
+                        show:true
+                    }
+                },
+                axis: {
+                    x:{
+                        type: 'timeseries',
+                        label: {
+                            text: 'Hora',
+                            position: 'outer-center'
+                        }
+                    },
+                    y: {
+                        label: {
+                            text: 'C°',
+                            position: 'outer-middle'
+                        }
+                    }
+                }
+            });
+
+            c3.generate({
+                bindto: '#InferiorDerecha',
+                legend:{
+                        hide: true
+                    },
+                data:{
+                    columns: [
+                        ['Hora', 15, 10, 15, 18, 15, 23]
+                    ],
+                    colors:{
+                        Hora: '#08AB3B'
+                    },
+                    
+                    type: 'spline'
+                },
+                grid: {
+                    x:{
+                        show: true
+                    },
+                    y:{
+                        show:true
+                    }
+                },
+                axis: {
+                    x: {
+                        label: {
+                            text: 'Hora'
+                        }
+                    },
+                    y: {
+                        label: {
+                            text: 'C°',
+                            position: 'outer-middle'
+                        }
+                    }
+                }
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

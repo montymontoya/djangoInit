@@ -1,7 +1,8 @@
 from django.views import View
 from django.shortcuts import render, redirect
-from .forms import loginForm, registerForm
-from django.contrib.auth import authenticate, login, logout
+from .forms import loginForm, registerForm, registrarImpresion
+from django.contrib.auth import authenticate, login, logout, get_user
+from django.contrib.auth.models import User
 # Create your views here.
 #def index (request):
 #    return render (request, 'login.html')
@@ -77,11 +78,55 @@ class register (View):
         }
         if form.is_valid():
             datos = form.cleaned_data
-            print(datos)
-            return render (request,'register.html', context)
+            user = User.objects.create_user(datos['usuario'], datos['correo'], datos['password'])
+            user.first_name = datos['nombre']
+            user.save()
+            print(user)
+            
+            return redirect('logueadito')
         else :
             print('datos no validos')
             return render (request, 'register.html', context)
 
+class tabladeUsuarios(View):
+    def get(self, request):
+        users = User.objects.all()
+        context = {
+           'datosUser':users
+        }
+        print(users)
+        return render (request, 'tablaUsuarios.html',context)
 
 
+class editarUsuario(View):
+    def get(self, request, id):
+        user = User.objects.get(pk=id)
+        context = {
+            'datosUser':user
+        }
+        print(user)
+        return render (request, 'editarUsuario.html',context)
+
+class registerImpresion (View):
+    def get(self,request):
+        form = registrarImpresion()
+        context = {
+            'formulario':form
+        }
+        return render (request, 'regImpresion3D.html', context)
+    
+    def post(self, request):
+        form = registrarImpresion(request.POST)
+        context = {
+            'formulario':form
+        }
+        if form.is_valid():
+            datos = form.cleaned_data
+            printType = User.objects.create_user(datos['nombre'],datos['gramaje'], datos['tiempo'], datos['cantidad'])
+            printType.save()
+            print(printType)
+            
+            return redirect('impresito')
+        else :
+            print('datos no validos')
+            return render (request, 'regImpresion3D.html', context)

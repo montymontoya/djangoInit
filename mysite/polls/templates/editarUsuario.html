@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Index</title>
+    
+    <link rel="stylesheet" href="{% static 'css/indexStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
+    
+  </head>
+  <body>
+
+        <form method="POST">
+            {% csrf_token %}
+            <h3>Usuario:</h3> 
+            {{formulario.usuario}}
+            <h3>Password: </h3>
+            {{formulario.password}}
+            <p>
+              <input type="submit" value="Enviar">
+              <input type="reset" value="Borrar">
+              <li><a href="{%url 'registrito'%}">Registrate</a></li>
+            </p>
+            <p>{{error}}</p>
+          </form>
+  </body>
+  
+</html>

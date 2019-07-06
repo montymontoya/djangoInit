@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Test Register</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Nombre de la impresión: {{formulario.nombre}}</p>
+        <p>Gramaje: {{formulario.gramaje}}</p>
+        <p>Tiempo en minutos: {{formulario.tiempo}}</p>
+        <p>Número de impresiones: {{formulario.cantidad}}</p>
+      <p>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+        <li><a href="{%url 'logueadito'%}">Ya estoy registrado</a></li>
+      </p>
+    </form>
+  </body>
+</html>

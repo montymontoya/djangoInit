@@ -1,0 +1,49 @@
+.btn-change{
+    -webkit-transition: all 0.5s ease-in-out;
+  }
+  
+  .btn-change:hover{
+    -webkit-transform: scale(1.1);
+  }
+
+  .lerow {
+
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  
+  .lenavbar {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+
+  .minimalize-styl-3 {
+    padding: 4px 12px;
+    margin: 14px 5px 5px 20px;
+    font-size: 14px;
+    float: left;
+  }
+  
+  @font-face {
+    font-family: 'SansProSemibold';
+    src:url("../fonts/SourceSansPro-SemiBold.ttf");
+  }
+
+  .titulin{
+    padding-left:2%;
+    color: #80C23F;
+    font-family: 'SansProSemibold';
+    font-size: medium;
+  }
+  
+  .boxi{
+    padding: 10%;
+  }
