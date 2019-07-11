@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?5pe70p');
+  src:  url('fonts/icomoon.eot?5pe70p#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?5pe70p') format('truetype'),
+    url('fonts/icomoon.woff?5pe70p') format('woff'),
+    url('fonts/icomoon.svg?5pe70p#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-3d:before {
+  content: "\e900";
+}
+.icon-ar-glasses:before {
+  content: "\e901";
+}
+.icon-augmented-reality:before {
+  content: "\e902";
+}
+.icon-body-scan:before {
+  content: "\e903";
+}
+.icon-coordination:before {
+  content: "\e904";
+}
+.icon-360:before {
+  content: "\e905";
+}
+.icon-eye-scan:before {
+  content: "\e906";
+}
+.icon-glasses:before {
+  content: "\e907";
+}
+.icon-gloves:before {
+  content: "\e908";
+}
+.icon-hologram:before {
+  content: "\e909";
+}
+.icon-interactive:before {
+  content: "\e90a";
+}
+.icon-interactive1:before {
+  content: "\e90b";
+}
+.icon-controller:before {
+  content: "\e90c";
+}
+.icon-gamepad:before {
+  content: "\e90d";
+}
+.icon-mobile-app:before {
+  content: "\e90e";
+}
+.icon-controller1:before {
+  content: "\e90f";
+}
+.icon-modeling:before {
+  content: "\e910";
+}
+.icon-panorama:before {
+  content: "\e911";
+}
+.icon-panoramic:before {
+  content: "\e912";
+}
+.icon-projector:before {
+  content: "\e913";
+}
+.icon-remote-control:before {
+  content: "\e914";
+}
+.icon-smartwatch:before {
+  content: "\e915";
+}
+.icon-motion-capture:before {
+  content: "\e916";
+}
+.icon-videogame:before {
+  content: "\e917";
+}
+.icon-camera:before {
+  content: "\e918";
+}
+.icon-virtual:before {
+  content: "\e919";
+}
+.icon-movie:before {
+  content: "\e91a";
+}
+.icon-smartphone:before {
+  content: "\e91b";
+}
+.icon-online-learning:before {
+  content: "\e91c";
+}
+.icon-earth:before {
+  content: "\e91d";
+}
+
+.fai-stack {
+  display: inline-block;
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: 2.5em; }
+
+.fai-stack-1x,
+.fai-stack-2x {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%; }
+
+.fai-stack-1x {
+  line-height: inherit; }
+
+
+.fai-stack-2x {
+  font-size: 2em; }
+
+.fai-inverse {
+  color: #fff; }
