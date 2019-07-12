@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Strasua';
+    src:url("../myFonts/strasua.ttf");
+  }
+
+  .strasua{
+    padding-left:0%;
+    color: rgb(255, 44, 7);
+    font-family: 'Strasua';
+  }
+
+  @font-face {
+    font-family: 'UrGone';
+    src:url("../myFonts/youre\ gone.ttf");
+  }
+
+  .urgone{
+    padding-left:0%;
+    color: rgb(255, 44, 7);
+    font-family: 'UrGone';
+  }
